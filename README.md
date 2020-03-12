@@ -4,15 +4,15 @@
 
 ## What is it?
 
-This one pathfinding experiment I did - basically a set of classes that can be used for pathfinding, using breadth first algorithm. I don't remember the reason why I didn't make the pathfinding use A* algorithm - but then again, I think I'm not using this version currently. In the above GIF you can see one implemenation I did using these classes (not included here, but it is not important) together with Unity Tilemap feature.
+This is one of the pathfinding experiments I have done - basically a set of classes that can be used for pathfinding using breadth first algorithm. I don't remember the reason why I didn't make the pathfinding use A* algorithm - but then again, I think I'm not using this pathfinding class currently. In the above GIF you can see one implemenation of this pathfinding class which I did using these classes  together with Unity Tilemap feature (implementation is not included here).
 
 ### Features:
 
-* Generate tile graph using nodes from input int array data
+* Generate tile based node graph from input integer array data
 
 * Roam the graph
 
-* Find path between start node and goal node 
+* Find a path between given start and goal nodes
 
 * If no path exists to goal node, the closest walked path point can be queried
 
@@ -32,23 +32,23 @@ Single node in node graph.
 Here is an example how pathfinder can be used:
 
 ```C#
-// Generate map data from a bitmap (in this case, your mileage may vary)
+// Generate map data array from a bitmap (in this case, your mileage may vary)
 int[,] array = PixelsToCells(mapTexture);
 
-// new NodeData information from array data
+// Generate NodeData information from array
 NodeData nodeData = new NodeData(array);
 
-// new Pathfinder, takes NodeData
+// Create new Pathfinder, takes NodeData
 pathFinder = new PathFinder(nodeData);
 
-// Set start and goal points
+// Set start and goal nodes
 Node start = nodeData.GetNode(startPosition.x, startPosition.y);
 Node goal = nodeData.GetNode(endPosition.x, endPosition.y);
 
-// Create roaming data
+// Create roaming data using start and goal as parameters
 Dictionary<Node, Node> roamed = pathFinder.CalculateBreadthFirst(start, goal);
 
-// Get path from start to goal
+// Get calculated path from start to goal node
 List<Node> path = pathFinder.GetPath(roamed, start, goal);
 
 // Render animation (or do whatever you are doing)
