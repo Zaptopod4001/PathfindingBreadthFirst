@@ -4,7 +4,7 @@
 
 ## What is it?
 
-This is one of the pathfinding experiments I have done - basically a set of classes that can be used for pathfinding using breadth first algorithm. I don't remember the reason why I didn't make the pathfinding use A* algorithm - but then again, I think I'm not using this pathfinding class currently. In the above GIF you can see one implemenation of this pathfinding class which I did using these classes  together with Unity Tilemap feature (implementation is not included here).
+This is one of the pathfinding experiments I have done - basically a set of classes that can be used for pathfinding using breadth first algorithm. I don't remember the reason why I didn't make the pathfinding use A* algorithm - but then again, I think I'm not using this pathfinding class currently. In the above GIF you can see one implemenation which I did using these classes together with Unity Tilemap feature and some custom tilemap drawing classes (implementation is not included here).
 
 ### Features:
 
